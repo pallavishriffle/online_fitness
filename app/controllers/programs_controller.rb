@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProgramsController < ApplicationController
-  before_action :find_id, only: %i[show update destroy]
+  before_action :find_id, only: [:show, :update, :destroy]
 
   def index
     program = Program.all
