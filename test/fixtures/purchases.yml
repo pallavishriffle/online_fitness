@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_name: MyString
+  mobile: 1
+  status: MyString
+  user: one
+  program: one
+
+two:
+  customer_name: MyString
+  mobile: 1
+  status: MyString
+  user: two
+  program: two
