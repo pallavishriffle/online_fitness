@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  before_action :find_id, except: %i[index create]
+  before_action :find_id, except: [index create]
 
   def index
     category = Category.all
