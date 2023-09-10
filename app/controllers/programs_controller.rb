@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProgramsController < ApplicationController
-  before_action :find_id, only: [:show, :update, :destroy]
+  before_action :find_id, only: %i[show update destroy]
 
   def index
     program = Program.all
@@ -26,7 +26,7 @@ class ProgramsController < ApplicationController
   end
 
   def show
-    render json: @program
+    render json: @program, serializer: ProgramSerializer
   end
 
   def update

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PurchasesController < ApplicationController
-  before_action :find_id, only: [:show, :update, :destroy]
+  before_action :find_id, only: %i[show update destroy]
 
   def index
     purchase = Purchase.all
@@ -43,7 +43,7 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    render json: @purchase
+    render json: @purchase, serializer: PurchaseSerializer
   end
 
   def destroy

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  before_action :find_id, except: [:index, :create]
+  before_action :find_id, except: %i[index create]
 
   def index
     category = Category.all
@@ -50,7 +50,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    render json: @category
+    render json: @category, serializer: CategorySerializer
   end
 
   private
