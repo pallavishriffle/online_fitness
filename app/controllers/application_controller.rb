@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include JsonWebToken
+  attr_reader :current_user
 
   before_action :authenticate_request
   before_action do
@@ -18,8 +19,6 @@ class ApplicationController < ActionController::Base
   rescue ActiveRecord::RecordNotFound
     render json: 'No record found..'
   end
-
-  attr_reader :current_user
 
   def render_404
     render json: { error: 'Invalid URL' }, status: :not_found

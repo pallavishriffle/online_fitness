@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :purchases
     resources :categories
   end
+  post 'password/forgot', to: 'password#forgot'
+  post 'password/reset', to: 'password#reset'   
 end
