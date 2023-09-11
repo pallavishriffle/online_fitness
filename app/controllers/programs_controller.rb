@@ -56,7 +56,7 @@ class ProgramsController < ApplicationController
   private
 
   def set_params
-    params.permit(:name, :status, :price, :user_id, :category_id)
+    params.permit(:name, :status, :price, :user_id, :category_id, :image)
   end
 
   def find_id

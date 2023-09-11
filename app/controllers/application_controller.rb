@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   include JsonWebToken
 
   before_action :authenticate_request
+  before_action do
+    ActiveStorage::Current.host = request.base_url
+  end
 
   def authenticate_request
     header = request.headers['Authorization']
