@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   validates :name, :email, :mobile, :type, presence: true
   validates :email, uniqueness: { case_sensitive: false }
-  validates :password_digest, length: { minimum: 8 }, format: { with: /\A\S+\z/ }
+  validates :password_digest, length: { minimum: 8 }
   validates :mobile, length: { is: 10 }, uniqueness: true
 end
